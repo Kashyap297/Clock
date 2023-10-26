@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Clock using Javascript</title>
+    <link rel="stylesheet" href="asset/css/style.css" class="rel">
+</head>
+
+<body>
+    <div class="clock">
+        <span>I</span>
+        <span>II</span>
+        <span>III</span>
+        <span>IV</span>
+        <span>V</span>
+        <span>VI</span>
+        <span>VII</span>
+        <span>VIII</span>
+        <span>IX</span>
+        <span>X</span>
+        <span>XI</span>
+        <span>XII</span>
+        <div class="clock-dot"></div>
+        <div class="clk-hrs" id="hrs"></div>
+        <div class="clk-min" id="minut"></div>
+        <div class="clk-sec" id="secnd"></div>
+    </div>
+</body>
+
+</html>
+
+
+<script>
+    function clock() {
+        var d = new Date();
+        var hours = d.getHours();
+        var min = d.getMinutes();
+        var sec = d.getSeconds();
+
+        var hr = hours * 30 + min / 2;
+        var mins = min * 6;
+        var secs = sec * 6;
+
+        hrs.style.transform = "rotate(" + hr + "deg)";
+        minut.style.transform = "rotate(" + mins + "deg)";
+        secnd.style.transform = "rotate(" + secs + "deg)";
+    }
+    setInterval(clock, 1000);
+    clock()
+    
+</script>
